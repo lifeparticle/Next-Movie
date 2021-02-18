@@ -20,7 +20,7 @@ class handler(BaseHTTPRequestHandler):
 		dic = dict(parse.parse_qsl(parse.urlsplit(self.path).query))
 		self.send_response(200)
 		self.send_header('Content-type','application/json; charset=utf-8')
-		self.send_header('Access-Control-Allow-Origin', 'https://next-movie-frontend.vercel.app/')
+		self.send_header('Access-Control-Allow-Origin', 'https://next-movie-frontend.vercel.app')
 		self.end_headers()
 
 		cursor.execute("SELECT * FROM movies ORDER BY RANDOM() LIMIT 1")
